@@ -48,9 +48,7 @@ export default function HomePage() {
         (page - 1) * visibleTaskLimit,
         page * visibleTaskLimit
     );
-    if (visibleTask.length === 0) {
-        handlePrev()
-    }
+
     function handleTaskChanged() {
         fetchTask();
     }
@@ -68,6 +66,9 @@ export default function HomePage() {
     }
     const handlePageChange = (newPage) => {
         setPage(newPage)
+    }
+    if (visibleTask.length === 0) {
+        handlePrev()
     }
     useEffect(() => { fetchTask() }
         , [dateQuery])
