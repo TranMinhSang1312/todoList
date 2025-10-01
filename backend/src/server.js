@@ -36,6 +36,12 @@ if (process.env.NODE_ENV === "production") {
 
 if (process.env.NODE_ENV !== "production") {
     app.use(cors({ origin: "http://localhost:5173" }));
+} else {
+    // CORS cho production - cho phép domain Render
+    app.use(cors({
+        origin: ["https://todolist-xge0.onrender.com"],
+        credentials: true
+    }));
 }
 
 app.use("/api/tasks", taskRoute);
