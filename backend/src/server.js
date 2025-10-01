@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
                 imgSrc: ["'self'", "data:", "blob:", "https:"],
                 scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
                 styleSrc: ["'self'", "'unsafe-inline'", "https:", "'unsafe-hashes'"],
-                connectSrc: ["'self'", "https:"],
+                connectSrc: ["'self'", "https:", "http://localhost:*", "ws://localhost:*"],
                 fontSrc: ["'self'", "data:", "https:"],
                 objectSrc: ["'none'"],
                 mediaSrc: ["'self'"],
